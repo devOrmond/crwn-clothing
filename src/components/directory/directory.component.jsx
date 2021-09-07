@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import MenuItem from '../menu-item/menu-item.component';
 import './directory.styles.scss'
+// import { withRouter} from 'react-router-dom'
 
 class Directory extends Component {
 
@@ -14,7 +15,7 @@ class Directory extends Component {
                   title: 'hats',
                   imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
                   id: 1,
-                  linkUrl: 'shop/hats'
+                  linkUrl: 'hats'
                 },
                 {
                   title: 'jackets',
@@ -51,12 +52,10 @@ class Directory extends Component {
         return (
             <div className='directory-menu'>
                 {
-                    this.state.sections.map(({title, imageUrl, id, size}) => (
+                    this.state.sections.map(({id, ...otherSectionProps}) => (
                     <MenuItem 
-                        title = {title}
-                        imageUrl = {imageUrl}
-                        id = {id}
-                        size = {size}
+                        key = {id}
+                        {...otherSectionProps}
                     />
                 ))}
             </div>
