@@ -3,3 +3,8 @@ body {
   /* 20px on the top and 80px in the side */
   padding: 20px 60px;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
